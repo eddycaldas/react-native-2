@@ -17,7 +17,9 @@ export default class App extends Component {
           places: prevState.places.concat({
             key: Math.random(), 
             name: placeName,
-            image: placeImage
+            image: {
+              uri: 'http://eddycaldaswebsite.surge.sh/images/pic00.jpg'
+            }
           })
         }
       })
