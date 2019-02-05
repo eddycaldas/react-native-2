@@ -24,7 +24,7 @@ const placeDetail = props => {
             { modelContent }
             <View>
                 <TouchableOpacity onPress={props.onItemDeleted}>
-                    <View style={styles.deleleButton}>
+                    <View style={styles.deleteButton}>
                         <Icon size={30} name="ios-trash" color='red' />
                     </View>
                 </TouchableOpacity>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 28
     },
-    deleleButton: {
+    deleteButton: {
         alignItems: 'center'
     }
 })
