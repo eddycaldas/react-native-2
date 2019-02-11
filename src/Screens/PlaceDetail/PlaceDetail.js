@@ -1,45 +1,30 @@
 import React from 'react';
-import { Modal, View, Image, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Image, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const placeDetail = props => {
-    let modelContent = null;
-
-    if(props.selectedPlace) {
-        modelContent = (
-            <View>
-              <Image source={props.selectedPlace.image}
-                     style={styles.placeImage}/>
-              <Text style={styles.placeName}>{props.selectedPlace.name}</Text>
-            </View>
-        )
-    }
     return(
-        <Modal 
-            onRequestClose={props.onModalClosed}
-            visible={props.selectedPlace !== null}
-                animationType='slide'>
-        <View style={styles.modalContainer}>
-            { modelContent }
+        <View style={styles.container}>
+            <View>
+                <Image source={props.selectedPlace.image}
+                    style={styles.placeImage}/>
+                <Text style={styles.placeName}>{props.selectedPlace.name}</Text>
+            </View>
             <View>
                 <TouchableOpacity onPress={props.onItemDeleted}>
                     <View style={styles.deleteButton}>
                         <Icon size={30} name="ios-trash" color='red' />
                     </View>
                 </TouchableOpacity>
-                <Button title='Close' 
-                        onPress={props.onModalClosed}/>
             </View>
         </View>
-        
-    </Modal>
     )
     
 }
 
 const styles = StyleSheet.create({
-    modalContainer : {
+    container : {
         margin: 22
     },
     placeImage: {
